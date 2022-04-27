@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group 'me.youngermax'
@@ -26,4 +27,23 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+application {
+    mainClassName 'me.youngermax.homeworkbot.Main'
+}
+
+task fatJar(type: org.gradle.jvm.tasks.Jar) {
+    manifest {
+        attributes(
+                'Main-Class': application.mainClassName
+        )
+    }
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+    duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+    with jar
 }
