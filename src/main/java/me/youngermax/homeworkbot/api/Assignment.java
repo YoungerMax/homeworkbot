@@ -27,7 +27,7 @@ public class Assignment {
         assignment.title = fields[4];
         assignment.dueDate = parseDate(fields[5]);
         assignment.directions = fields[6];
-        assignment.optional = fields[7].isEmpty();
+        assignment.optional = !fields[7].isEmpty();
 
         return assignment;
     }
