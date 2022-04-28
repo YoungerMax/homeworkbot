@@ -5,6 +5,7 @@ import me.youngermax.homeworkbot.Environment;
 import me.youngermax.homeworkbot.api.HomeworkManager;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 
@@ -21,14 +22,13 @@ public class HomeworkBot {
                 .addEventListeners(new HomeworkBotMessageHandler(homeworkManager))
                 .build();
 
-        jda.awaitReady(); // 2147576832
+        jda.awaitReady();
 
         registerCommands(jda);
     }
 
     private void registerCommands(JDA jda) {
-        jda.getGuildById(777995016168931358L)
-                .updateCommands()
+        jda.updateCommands()
                 .addCommands(Commands.slash("homework", "Lists the current homework"))
                 .queue();
     }
