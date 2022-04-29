@@ -33,6 +33,8 @@ public class Assignment {
     }
 
     private static LocalDate parseDate(String field) {
+        if (!field.contains("/")) return null;
+
         String[] split = field.split("/");
         return LocalDate.of(Integer.parseInt(split[2]), Integer.parseInt(split[0]), Integer.parseInt(split[1]));
     }
