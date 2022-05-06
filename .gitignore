@@ -1,18 +1,36 @@
-.gradle
-/build/
+## From https://github.com/github/gitignore/blob/d0b80a469983a7beece8fa1f5c48a8242318b531/C++.gitignore
+# Prerequisites
+*.d
 
-# Ignore Gradle GUI config
-gradle-app.setting
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
 
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-!gradle-wrapper.jar
+# Precompiled Headers
+*.gch
+*.pch
 
-# Cache of project
-.gradletasknamecache
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
 
-# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
-# gradle/wrapper/gradle-wrapper.properties
+# Fortran module files
+*.mod
+*.smod
 
-config.properties
-cache/
-.idea/
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+## Other project specific files
+src/config.hpp

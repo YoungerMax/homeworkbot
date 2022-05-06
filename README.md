@@ -1,23 +1,24 @@
-# HomeworkBot
+# HomeworkBot 2
 
-Discord bot that links a Google Sheet with homework to your Discord server
+HomeworkBot 2: A Discord bot that keeps track of your homework. HomeworkBot is a Discord bot that links your assigned homework to your Discord server.
 
-## Start Developing
+# Building
 
-1. Clone this repository
-2. Import Gradle project into IDEA
-3. Copy `config.properties.example` to `config.properties` and fill out the appropriate info
-   1. You need a Google Sheet with public view access via link
-   2. Just import the template in `example.csv`
-4. Create a bot on Discord with permissions or use `277025475584` for `permissions`
-   1. Scopes
-      1. `bot`
-      2. `application.commands`
-   2. Bot permissions
-      1. `Read Messages/View Channels`
-      2. `Send Messages`
-      3. `Send Messages in Threads`
-      4. `Embed Links`
-      5. `Read Message History`
-      6. `Use Slash Commands`
-5. Invite the bot to a test server are start it up
+## 1. Prerequisites
+### Discord
+- You need a Discord bot token to run the bot
+
+### Dependencies
+- D++
+
+## 2. Configuration
+- Copy `src/config.example.hpp` to `src/config.hpp`
+- Adjust the values in the config accordingly.
+    - Set `TOKEN` to the token of your Discord bot
+    - `DEBUG_LOGGING` controls if there should be debug messages printed to the standard output
+
+## 3. Compiling
+- In the root of this repository, run `make` to build
+- Ensure that your environment variable `LD_LIBRARY_PATH` is set to `/usr/local/lib/` or the correct library directory on your system
+- Run `bot.out`
+
