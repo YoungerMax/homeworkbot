@@ -1,4 +1,6 @@
 ## adapted from https://github.com/abdowns/tsort/blob/a3c1841e558ca474ce92518549ca56437e0ee529/Makefile
+## abdowns here, i actually adapted the tsort makefile from the DWM Window Manager makefile so credits to suckless devs
+
 CXX = g++
 SRC = src/main.cpp
 OBJ = ${SRC:.cpp=.o}

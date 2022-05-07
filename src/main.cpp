@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "config.hpp"
+#include "cmdhandler.hpp"
 
 int main() {
     dpp::cluster bot(TOKEN);
@@ -9,9 +10,17 @@ int main() {
     if (DEBUG_LOGGING) {
         bot.on_log(dpp::utility::cout_logger());
     }
- 
-    bot.on_ready([&bot](const dpp::ready_t& event) {
+
+    dpp::commandhandler command_handler(&bot);
+
+    command_handler
+    .add_prefix(".")
+    .add_prefix("/");
+
+    bot.on_ready([&bot, &command_handler](const dpp::ready_t& event) {
         std::cout << "Hello D++!" << std::endl;
+
+        ch::load_commands(&command_handler);
     });
  
     bot.start(false);
